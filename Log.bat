@@ -252,12 +252,9 @@ Changes to be committed:
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-        modified:   file3.txt
-
 PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git add .
 PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git status
 On branch main
-Your branch is ahead of 'origin/main' by 7 commits.
   (use "git push" to publish your local commits)
 
 Changes to be committed:
@@ -267,11 +264,64 @@ Changes to be committed:
 
 PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git commit -m ":tada:  commit done"
 [main da5219f] :tada:  commit done
- 2 files changed, 0 insertions(+), 0 deletions(-)
 PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git status
 On branch main
 Your branch is ahead of 'origin/main' by 8 commits.
   (use "git push" to publish your local commits)
 
 nothing to commit, working tree clean
-PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> 
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git add .
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git commit -m ":tada: final commit done"
+ 1 file changed, 277 insertions(+)
+Enumerating objects: 28, done.
+Counting objects: 100% (28/28), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (27/27), done.
+Writing objects: 100% (27/27), 3.59 KiB | 3.59 MiB/s, done.
+Total 27 (delta 13), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (13/13), done.
+   fa93f1a..68b5f12  main -> main
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git status
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git restore .\test.txt
+error: pathspec '.\test.txt' did not match any file(s) known to git
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> more .\test.txt
+test
+
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git restore --staged .\test.txt
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> more .\test.txt
+test
+
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git add .
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> more .\test.txt
+test
+
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git restore --source=HEAD~1 .\test.txt
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> more test.txt
+Get-Content : Cannot find path 'C:\Users\LAB203-01\Desktop\ST W4 LAB2\test.txt' because it does not exist.
+At line:7 char:9
++         Get-Content $file | more.com
++         ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\LAB203...4 LAB2\test.txt:String) [Get-Content], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+ 
+
+PS C:\Users\LAB203-01\Desktop\ST W4 LAB2> git commit -    
